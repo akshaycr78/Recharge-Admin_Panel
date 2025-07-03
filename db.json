@@ -1,0 +1,108 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "name": "John Thomas",
+      "amount": "249/-",
+      "time": "10:30 AM",
+      "mobile": "9675845386",
+      "status": "Success",
+      "operator": "Airtel",
+      "date": "2025-07-02",
+      "role": "Dealer"
+    },
+    {
+      "id": 2,
+      "name": "Noah JR",
+      "amount": "249/-",
+      "time": "10:45 AM",
+      "mobile": "9675845386",
+      "status": "Failed",
+      "operator": "Jio",
+      "date": "2025-07-01",
+      "role": "User"
+    },
+    {
+      "id": 3,
+      "name": "Linda Roy",
+      "amount": "199/-",
+      "time": "11:00 AM",
+      "mobile": "9876543210",
+      "status": "Pending",
+      "operator": "Vi",
+      "date": "2025-07-01",
+      "role": "Retailer"
+    }
+  ],
+
+
+  "dashboard": {
+    "totalRecharges": "1,234",
+    "revenue": "5,778/-",
+    "failedTransactions": "56",
+    "activeUsers": "345",
+    "rechargeTrend": {
+      "percentage": "+12%",
+      "days": "Last 7 Days"
+    }
+  },
+ "adminHome": {
+  "margins": [20000, 18000, 22000, 25000],
+  "walletBalance": "₹34,500",
+  "lastUpdated": "2025-07-02T14:20:00",
+  "quickStats": {
+    "totalRechargesToday": 150,
+    "failedTransactions": 5,
+    "newUsers": 20
+  }
+},
+
+  "users": [
+  {
+    "id": 1,
+    "name": "John Thomas",
+    "mobile": "9675845386",
+    "amount": "350/-"
+  },
+  {
+    "id": 2,
+    "name": "John Thomas",
+    "mobile": "9675845386",
+    "amount": "350/-"
+  },
+  {
+    "id": 3,
+    "name": "John Thomas",
+    "mobile": "9675845386",
+    "amount": "350/-"
+  },
+  {
+    "id": 4,
+    "name": "John Thomas",
+    "mobile": "9675845386",
+    "amount": "350/-"
+  }
+  ],
+  "wallet":{
+    "marginw": "1,23,456/-",
+    "dealerw": "78,901/-",
+    "retailerw": "1,23,456/-",
+    "userw": "1,23,456/-"
+},
+  "support":[{
+    "id":1,
+    "complaint": "Transaction failed",
+    "userId": 123456
+  },
+  {
+    "id":2,
+    "complaint": "Transaction failed",
+    "userId": 123456
+  },
+  {
+    "id":3,
+    "complaint": "Transaction failed",
+    "userId": 123456
+  }
+]
+}

@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminHome";
+import Dashboard from "./pages/Dashboard";
+import Transactions from "./pages/Transaction";
+import Users from "./pages/Users";
+import WalletManagement from "./pages/WalletManagement";
+import Settings from "./pages/Settings";
+import Support from "./pages/Support";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AdminLogin />} />
+        <Route path="/admin-home" element={<AdminDashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/transactions" element={<Transactions />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/walletmanagement" element={<WalletManagement />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/support" element={<Support />} />
+
+
+
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
