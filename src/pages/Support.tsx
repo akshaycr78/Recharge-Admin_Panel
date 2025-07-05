@@ -43,7 +43,7 @@ const Support:React.FC = () => {
         >
         <div>
             <div className="text-lg font-medium text-gray-800 px-4">
-              Complaint: <span className="text-lg text-gray-600">{complaints.complaint}</span></div>
+              Complaint: <span className="text-lg text-red-600">{complaints.complaint}</span></div>
             <div className="text-sm text-gray-800 px-4">User ID: <span className="text-sm text-gray-500">{complaints.userId}</span></div>
         </div>
         </div>
@@ -53,4 +53,4 @@ const Support:React.FC = () => {
     )
 }
 
-export default Support
+export default Support

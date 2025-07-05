@@ -8,6 +8,9 @@ import Users from "./pages/Users";
 import WalletManagement from "./pages/WalletManagement";
 import Settings from "./pages/Settings";
 import Support from "./pages/Support";
+import RechargePlans from "./pages/MorePlans";
+import RechargePage from "./pages/RechargeHome";
+import RechargeHistory from "./pages/RechargeHistory";
 
 function App() {
   return (
@@ -21,6 +24,11 @@ function App() {
         <Route path="/walletmanagement" element={<WalletManagement />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/support" element={<Support />} />
+
+        <Route path="/more-plans" element={<RechargePlans />} />
+        <Route path="/recharge-home" element={<RechargePage />} />
+        <Route path="/recharge-history" element={<RechargeHistory />} />
+
 
 
 

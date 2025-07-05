@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Topbar from "../components/TopBar";
 import MarginCard from "../components/MarginCard";
 import QuickStatCard from "../components/QuickStatCard";
@@ -17,6 +18,7 @@ interface DashboardData {
 
 const AdminHome: React.FC = () => {
   const [data, setData] = useState<DashboardData | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5000/adminHome")
@@ -31,9 +33,9 @@ const AdminHome: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       <Topbar />
 
-      <div className="p-4">
+      <div className="p-4 sm:p-6 lg:p-8 max-w-screen-xl mx-auto">
         {/* 🔷 Margin Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6">
           {data?.margins.map((margin, index) => (
             <MarginCard
               key={index}
@@ -48,11 +50,12 @@ const AdminHome: React.FC = () => {
           <WalletCard
             balance={data.walletBalance}
             lastUpdated={data.lastUpdated}
+            onWalletClick={() => navigate("/walletmanagement")}
           />
         )}
 
         {/* ⚡ Quick Stats */}
-        <h3 className="text-lg font-semibold mb-3 mt-6">Quick Status</h3>
+        <h3 className="text-lg font-semibold mb-3 mt-6 text-gray-700">Quick Status</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-3">
           <QuickStatCard
             title="Total Recharges Today"

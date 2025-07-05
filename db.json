@@ -34,8 +34,6 @@
       "role": "Retailer"
     }
   ],
-
-
   "dashboard": {
     "totalRecharges": "1,234",
     "revenue": "5,778/-",
@@ -46,63 +44,124 @@
       "days": "Last 7 Days"
     }
   },
- "adminHome": {
-  "margins": [20000, 18000, 22000, 25000],
-  "walletBalance": "₹34,500",
-  "lastUpdated": "2025-07-02T14:20:00",
-  "quickStats": {
-    "totalRechargesToday": 150,
-    "failedTransactions": 5,
-    "newUsers": 20
-  }
-},
-
+  "adminHome": {
+    "margins": [20000, 18000, 22000, 25000],
+    "walletBalance": "₹34,500",
+    "lastUpdated": "2025-07-02T14:20:00",
+    "quickStats": {
+      "totalRechargesToday": 150,
+      "failedTransactions": 5,
+      "newUsers": 20
+    }
+  },
   "users": [
-  {
-    "id": 1,
-    "name": "John Thomas",
-    "mobile": "9675845386",
-    "amount": "350/-"
-  },
-  {
-    "id": 2,
-    "name": "John Thomas",
-    "mobile": "9675845386",
-    "amount": "350/-"
-  },
-  {
-    "id": 3,
-    "name": "John Thomas",
-    "mobile": "9675845386",
-    "amount": "350/-"
-  },
-  {
-    "id": 4,
-    "name": "John Thomas",
-    "mobile": "9675845386",
-    "amount": "350/-"
-  }
+    {
+      "id": 1,
+      "name": "John Thomas",
+      "mobile": "9675845386",
+      "amount": "350/-"
+    },
+    {
+      "id": 2,
+      "name": "John Thomas",
+      "mobile": "9675845386",
+      "amount": "350/-"
+    },
+    {
+      "id": 3,
+      "name": "John Thomas",
+      "mobile": "9675845386",
+      "amount": "350/-"
+    },
+    {
+      "id": 4,
+      "name": "John Thomas",
+      "mobile": "9675845386",
+      "amount": "350/-"
+    }
   ],
-  "wallet":{
+  "wallet": {
     "marginw": "1,23,456/-",
     "dealerw": "78,901/-",
     "retailerw": "1,23,456/-",
     "userw": "1,23,456/-"
-},
-  "support":[{
-    "id":1,
-    "complaint": "Transaction failed",
-    "userId": 123456
   },
-  {
-    "id":2,
-    "complaint": "Transaction failed",
-    "userId": 123456
-  },
-  {
-    "id":3,
-    "complaint": "Transaction failed",
-    "userId": 123456
-  }
+  "support": [
+    {
+      "id": 1,
+      "complaint": "Transaction failed",
+      "userId": 123456
+    },
+    {
+      "id": 2,
+      "complaint": "Transaction failed",
+      "userId": 123456
+    },
+    {
+      "id": 3,
+      "complaint": "Transaction failed",
+      "userId": 123456
+    }
+  ],
+  "plans": [
+    {
+      "id": 1,
+      "category": "For you",
+      "price": 199,
+      "data": "1.5 GB/Day",
+      "calls": "Unlimited",
+      "sms": "100 SMS/Day",
+      "validity": "28 days"
+    },
+    {
+      "id": 2,
+      "category": "Recommended",
+      "price": 299,
+      "data": "2 GB/Day",
+      "calls": "Unlimited",
+      "sms": "100 SMS/Day",
+      "validity": "28 days"
+    },
+    {
+      "id": 3,
+      "category": "Data",
+      "price": 58,
+      "data": "3 GB",
+      "calls": "No Calls",
+      "sms": "No SMS",
+      "validity": "7 days"
+    },
+     {
+      "id": 4,
+      "category": "For you",
+      "price": 179,
+      "data": "1.4 GB/Day",
+      "calls": "Unlimited",
+      "sms": "100 SMS/Day",
+      "validity": "24 days"
+    },
+    {
+  "id": 4,
+  "category": "Unlimited",
+  "price": 399,
+  "data": "3 GB/Day",
+  "calls": "Unlimited",
+  "sms": "100 SMS/Day",
+  "validity": "56 days"
+}
+
+  ],
+
+  "recharge":[
+  { "id":1,"price": 198, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" },
+  { "id":2,"price": 278, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" },
+  { "id":3,"price": 300, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" },
+  { "id":4,"price": 760, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" }
+],
+"rechargehistory":[
+  {"userName":"Job", "phone":"77886514"},
+  {"userName":"Kurian", "phone":"77886534"},
+  {"userName":"Tessa", "phone":"77716514"}
 ]
+
 }

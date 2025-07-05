@@ -16,7 +16,6 @@ const Topbar: React.FC = () => {
     navigate("/");
   };
 
-  // Detect clicks outside the dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -36,13 +35,15 @@ const Topbar: React.FC = () => {
   }, [showMenu]);
 
   return (
-    <div className="relative bg-white shadow-sm border-b px-6 py-4 flex justify-between items-center">
+    <div className="relative bg-white shadow-sm border-b px-6 h-24 flex justify-between items-center">
       {/* Left - Logo + Hamburger */}
       <div className="flex items-center gap-4">
         <button onClick={() => setShowMenu(!showMenu)}>
           <i className="fas fa-bars text-xl text-gray-800" />
         </button>
-        <div className="text-xl font-bold text-blue-600">Admin Panel</div>
+        <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600">
+          Admin Panel
+        </div>
       </div>
 
       {/* Right - Icons */}
@@ -65,7 +66,7 @@ const Topbar: React.FC = () => {
       {showMenu && (
         <div
           ref={menuRef}
-          className="absolute top-16 left-4 bg-white border rounded-md shadow-md z-50 w-56"
+          className="absolute top-24 left-4 bg-white border rounded-md shadow-md z-50 w-56"
         >
           <ul className="flex flex-col py-2 text-gray-700 text-sm font-medium">
             <li onClick={() => handleNavigate("/admin-home")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home</li>

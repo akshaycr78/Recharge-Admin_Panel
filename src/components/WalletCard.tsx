@@ -3,13 +3,10 @@ import React from "react";
 interface Props {
   balance: string;
   lastUpdated: string;
+  onWalletClick: () => void;
 }
 
-const WalletCard: React.FC<Props> = ({ balance, lastUpdated }) => {
-  const handleAddMoney = () => {
-    alert("Redirect to Add Money Flow (to be implemented)");
-  };
-
+const WalletCard: React.FC<Props> = ({ balance, lastUpdated, onWalletClick }) => {
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 mb-6 flex items-center justify-between transform">
       <div>
@@ -19,10 +16,10 @@ const WalletCard: React.FC<Props> = ({ balance, lastUpdated }) => {
       </div>
 
       <button
-        onClick={handleAddMoney}
+        onClick={onWalletClick}
         className="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-blue-700 transition-all duration-200 shadow-md"
       >
-        Add Money
+        Wallet
       </button>
     </div>
   );
