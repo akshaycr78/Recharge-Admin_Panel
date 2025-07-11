@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/dashboard")
+    fetch("http://localhost:5000/dashboard/")
       .then((res) => res.json())
       .then((data) => setDashboardData(data))
       .catch((err) => console.error("Error fetching dashboard data:", err));

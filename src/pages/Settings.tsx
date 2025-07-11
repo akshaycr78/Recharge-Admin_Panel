@@ -10,19 +10,19 @@ const Settings: React.FC = () => {
       icon: <i className="fas fa-user-cog text-lg text-indigo-600" />,
       title: "Admin Profile",
       description: "Manage your profile information",
-      // onClick: () => navigate("/admin-profile"),
+      onClick: () => navigate("/profile"),
     },
     {
       icon: <i className="fas fa-user-shield text-lg text-indigo-600" />,
       title: "Sub-Admin Roles",
       description: "Manage sub-admin roles and permissions",
-      // onClick: () => navigate("/sub-admin-roles"),
+      onClick: () => navigate("/sub-admin-list"),
     },
     {
       icon: <i className="fas fa-bell text-lg text-indigo-600" />,
       title: "Notification Settings",
       description: "Configure notification settings",
-      // onClick: () => navigate("/notification-settings"),
+      onClick: () => navigate("/notification"),
     }
   ];
 
@@ -49,7 +49,7 @@ const Settings: React.FC = () => {
               <button
                 key={i}
                 className="w-full flex items-start gap-4 bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out"
-                // onClick={item.onClick}
+                onClick={item.onClick}
               >
                 <div className="flex-shrink-0">{item.icon}</div>
                 <div className="text-left">
@@ -69,7 +69,7 @@ const Settings: React.FC = () => {
           <div className="space-y-4">
             <button
               className="w-full flex items-start gap-4 bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out"
-              // onClick={settings[2].onClick}
+              onClick={settings[2].onClick}
             >
               <div className="flex-shrink-0">{settings[2].icon}</div>
               <div className="text-left">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Topbar from "../components/TopBar";
+import axios from "axios";
 
 interface Transaction {
   id: number;
@@ -48,13 +49,18 @@ const Transactions: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/transactions")
-      .then((res) => res.json())
-      .then((data) => {
-        setTransactions(data);
-        setFilteredTransactions(data);
-      })
-      .catch((err) => console.error("Error fetching transactions", err));
+    const fetchTransactions = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/wallet/transactions");
+        setTransactions(res.data);
+        setFilteredTransactions(res.data);
+      } catch (err: any) {
+        console.error("Error fetching transactions", err);
+        alert("Failed to load transactions.");
+      }
+    };
+
+    fetchTransactions();
   }, []);
 
   useEffect(() => {

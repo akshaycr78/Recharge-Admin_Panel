@@ -131,7 +131,7 @@
       "sms": "No SMS",
       "validity": "7 days"
     },
-     {
+    {
       "id": 4,
       "category": "For you",
       "price": 179,
@@ -141,27 +141,87 @@
       "validity": "24 days"
     },
     {
-  "id": 4,
-  "category": "Unlimited",
-  "price": 399,
-  "data": "3 GB/Day",
-  "calls": "Unlimited",
-  "sms": "100 SMS/Day",
-  "validity": "56 days"
-}
-
+      "id": 5,
+      "category": "Unlimited",
+      "price": 399,
+      "data": "3 GB/Day",
+      "calls": "Unlimited",
+      "sms": "100 SMS/Day",
+      "validity": "56 days"
+    }
   ],
-
-  "recharge":[
-  { "id":1,"price": 198, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" },
-  { "id":2,"price": 278, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" },
-  { "id":3,"price": 300, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" },
-  { "id":4,"price": 760, "data": "2 GB/Day", "calls": "Unlimited Call", "sms": "100 SMS/Day", "validity": "14 days" }
-],
-"rechargehistory":[
-  {"userName":"Job", "phone":"77886514"},
-  {"userName":"Kurian", "phone":"77886534"},
-  {"userName":"Tessa", "phone":"77716514"}
-]
-
+  "recharge": [
+    {
+      "id": 1,
+      "price": 198,
+      "data": "2 GB/Day",
+      "calls": "Unlimited Call",
+      "sms": "100 SMS/Day",
+      "validity": "14 days"
+    },
+    {
+      "id": 2,
+      "price": 278,
+      "data": "2 GB/Day",
+      "calls": "Unlimited Call",
+      "sms": "100 SMS/Day",
+      "validity": "14 days"
+    },
+    {
+      "id": 3,
+      "price": 300,
+      "data": "2 GB/Day",
+      "calls": "Unlimited Call",
+      "sms": "100 SMS/Day",
+      "validity": "14 days"
+    },
+    {
+      "id": 4,
+      "price": 760,
+      "data": "2 GB/Day",
+      "calls": "Unlimited Call",
+      "sms": "100 SMS/Day",
+      "validity": "14 days"
+    }
+  ],
+  "rechargehistory": [
+    {
+      "userName": "Job",
+      "phone": "77886514"
+    },
+    {
+      "userName": "Kurian",
+      "phone": "77886534"
+    },
+    {
+      "userName": "Tessa",
+      "phone": "77716514"
+    }
+  ],
+  "margintransactions": [
+    {
+      "id": 1,
+      "amount": "70000",
+      "time": "2024-01-25T10:30:00",
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "amount": "50000",
+      "time": "2024-01-23T15:15:00",
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "amount": "4000",
+      "time": "2024-01-22T09:00:00",
+      "type": "credit",
+      "status": "failed"
+    }
+  ],
+  "marginwallet": {
+    "wallet": "24000"
+  }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, ComponentType } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiSearch, FiX } from "react-icons/fi";
 import type { IconBaseProps } from "react-icons";
+import axios from "axios";
 
 const ArrowLeftIcon = FiArrowLeft as ComponentType<IconBaseProps>;
 const SearchIcon = FiSearch as ComponentType<IconBaseProps>;
@@ -22,42 +23,70 @@ const RechargePlans: React.FC = () => {
   const [activeTab, setActiveTab] = useState("");
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(false);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const navigate = useNavigate();
 
-  // Fetch plans
+  // Fetch plans using Axios
   useEffect(() => {
-    fetch("http://localhost:5000/plans")
-      .then((res) => res.json())
-      .then((data) => {
-        setPlans(data);
-        if (data.length > 0) {
-          setActiveTab(data[0].category); // Set first category as default
+    const fetchPlans = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/plans/");
+        setPlans(res.data);
+        if (res.data.length > 0) {
+          setActiveTab(res.data[0].category);
         }
-      })
-      .catch((err) => console.error("Failed to fetch plans", err));
+      } catch (err) {
+        console.error("Failed to fetch plans", err);
+        alert("Failed to fetch plans. Please try again.");
+      }
+    };
+
+    fetchPlans();
   }, []);
 
-  // Tabs from unique categories
   const tabs = Array.from(new Set(plans.map((p) => p.category)));
 
-  // Scroll active tab into view
   useEffect(() => {
     const el = tabRefs.current[activeTab];
     if (el) el.scrollIntoView({ behavior: "smooth", inline: "center" });
   }, [activeTab]);
 
-  // Filter plans
   const filteredPlans = plans.filter((plan) => {
     const searchable = `${plan.price} ${plan.data} ${plan.calls} ${plan.sms} ${plan.validity}`.toLowerCase();
     const matchesSearch = searchable.includes(searchQuery.toLowerCase());
 
     if (searchQuery.trim() !== "") {
-      return matchesSearch; // search across all
+      return matchesSearch;
     }
 
-    return plan.category === activeTab; // default tab filter
+    return plan.category === activeTab;
   });
+
+  const handleRecharge = async (plan: Plan) => {
+    setLoading(true);
+    try {
+      const res = await axios.post("http://localhost:5000/plans/{id}/", {
+        planId: plan.id,
+        amount: plan.price,
+        // userId: localStorage.getItem("userId"), // if needed
+      });
+
+      alert("Recharge successful!");
+      console.log("Recharge response:", res.data);
+      // navigate("/recharge-success", { state: res.data });
+
+    } catch (err: any) {
+      if (err.response && err.response.data && err.response.data.message) {
+        alert("Recharge failed: " + err.response.data.message);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+      console.error("Recharge error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="w-full px-4 py-6 bg-gray-50 min-h-screen text-gray-800">
@@ -132,8 +161,12 @@ const RechargePlans: React.FC = () => {
               >
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-lg font-bold text-black">₹{plan.price}</h3>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-1 rounded-full shadow-sm transition">
-                    Recharge
+                  <button
+                    className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-1 rounded-full shadow-sm transition disabled:opacity-50"
+                    onClick={() => handleRecharge(plan)}
+                    disabled={loading}
+                  >
+                    {loading ? "Processing..." : "Recharge"}
                   </button>
                 </div>
                 <p className="text-sm text-gray-700">

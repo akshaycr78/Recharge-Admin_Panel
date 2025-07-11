@@ -11,6 +11,12 @@ import Support from "./pages/Support";
 import RechargePlans from "./pages/MorePlans";
 import RechargePage from "./pages/RechargeHome";
 import RechargeHistory from "./pages/RechargeHistory";
+import NotificationSettings from "./pages/NotificationSettings";
+import MarginWallet from "./pages/MarginWallett";
+import AddSubAdmin from "./pages/Sub-Admin";
+import SubAdminList from "./pages/Sub-Admin-List";
+import AdminProfile from "./pages/AdminProfile";
+
 
 function App() {
   return (
@@ -28,6 +34,14 @@ function App() {
         <Route path="/more-plans" element={<RechargePlans />} />
         <Route path="/recharge-home" element={<RechargePage />} />
         <Route path="/recharge-history" element={<RechargeHistory />} />
+
+        <Route path="/notification" element={<NotificationSettings />} />
+        <Route path="/marginwallet" element={<MarginWallet />} />
+        <Route path="/sub-admin" element={<AddSubAdmin />} />
+        <Route path="/sub-admin-list" element={<SubAdminList />} />
+        <Route path="/profile" element={<AdminProfile />} />
+
+
 
 
 

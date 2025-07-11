@@ -35,7 +35,7 @@ const Topbar: React.FC = () => {
   }, [showMenu]);
 
   return (
-    <div className="relative bg-white shadow-sm border-b px-6 h-24 flex justify-between items-center">
+    <div className="relative bg-white shadow-sm border-b px-6 h-24 flex justify-between items-center z-50">
       {/* Left - Logo + Hamburger */}
       <div className="flex items-center gap-4">
         <button onClick={() => setShowMenu(!showMenu)}>
@@ -48,9 +48,13 @@ const Topbar: React.FC = () => {
 
       {/* Right - Icons */}
       <div className="flex items-center gap-4">
-        <i className="fas fa-bell text-xl text-gray-600" />
         <i
-          className="fas fa-user-circle text-2xl text-gray-700 cursor-pointer"
+          className="fas fa-bell text-xl text-gray-600 cursor-pointer hover:text-blue-600"
+          onClick={() => handleNavigate("/notification")}
+          title="Notifications"
+        />
+        <i
+          className="fas fa-user-circle text-2xl text-gray-700 cursor-pointer hover:text-blue-600"
           onClick={() => handleNavigate("/profile")}
           title="Profile"
         />
@@ -69,14 +73,54 @@ const Topbar: React.FC = () => {
           className="absolute top-24 left-4 bg-white border rounded-md shadow-md z-50 w-56"
         >
           <ul className="flex flex-col py-2 text-gray-700 text-sm font-medium">
-            <li onClick={() => handleNavigate("/admin-home")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home</li>
-            <li onClick={() => handleNavigate("/dashboard")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Dashboard</li>
-            <li onClick={() => handleNavigate("/transactions")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Transactions</li>
-            <li onClick={() => handleNavigate("/users")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Users</li>
-            <li onClick={() => handleNavigate("/walletmanagement")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Wallet Management</li>
-            <li onClick={() => handleNavigate("/support")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Support</li>
-            <li onClick={() => handleNavigate("/settings")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Settings</li>
-            <li onClick={handleLogout} className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-600">Logout</li>
+            <li
+              onClick={() => handleNavigate("/admin-home")}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Home
+            </li>
+            <li
+              onClick={() => handleNavigate("/dashboard")}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Dashboard
+            </li>
+            <li
+              onClick={() => handleNavigate("/transactions")}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Transactions
+            </li>
+            <li
+              onClick={() => handleNavigate("/users")}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Users
+            </li>
+            <li
+              onClick={() => handleNavigate("/walletmanagement")}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Wallet Management
+            </li>
+            <li
+              onClick={() => handleNavigate("/support")}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Support
+            </li>
+            <li
+              onClick={() => handleNavigate("/settings")}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Settings
+            </li>
+            <li
+              onClick={handleLogout}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-600"
+            >
+              Logout
+            </li>
           </ul>
         </div>
       )}

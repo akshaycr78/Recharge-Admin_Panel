@@ -42,7 +42,7 @@ const RechargeHistory: React.FC = () => {
           Recharge History
         </h1>
 
-        {/* 🔍 Search Bar */}
+        
         <div className="flex justify-center mb-4">
           <input
             type="text"
@@ -60,9 +60,9 @@ const RechargeHistory: React.FC = () => {
               className="bg-white shadow-md hover:shadow-lg transition-shadow duration-200 rounded-lg p-4 w-full"
             >
               <div className="flex items-center justify-between">
-                {/* Left Side: Avatar + User Info */}
+                
                 <div className="flex items-center gap-4">
-                  {/* User Image or Icon */}
+                
                   {user.userPfp ? (
                     <img
                       src={user.userPfp}
@@ -75,7 +75,7 @@ const RechargeHistory: React.FC = () => {
                     </div>
                   )}
 
-                  {/* User Details */}
+                 
                   <div>
                     <p className="text-lg font-semibold text-gray-800">{user.userName}</p>
                     <p className="text-sm text-gray-500">{user.phone}</p>
@@ -100,3 +100,4 @@ const RechargeHistory: React.FC = () => {
 };
 
 export default RechargeHistory;
+  
